@@ -10,7 +10,7 @@ export const validateToken = (req, res, next) => {
         token = token.split(" ")[1];
 
         const { id } = jwt.verify(token, process.env.JWT_SECRET);
-        req.id = id;
+        req.uid = id;
         next();
     } catch (error) {
         console.log(error);

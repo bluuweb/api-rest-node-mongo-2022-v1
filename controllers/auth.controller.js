@@ -47,7 +47,7 @@ export const login = async (req, res) => {
 
 export const infoUser = async (req, res) => {
     try {
-        const user = await User.findById(req.id);
+        const user = await User.findById(req.uid);
         res.json({ ok: true, email: user.email });
     } catch (error) {
         console.log(error);
